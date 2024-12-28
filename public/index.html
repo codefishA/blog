@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="cn_Zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CodeFish -  - 知识来自实践。 - Knowledge comes from experience alone. - 世间无所谓天才，它仅是刻苦加勤奋。 - There is no such thing as genius; it is nothing but labour and diligence.</title><meta name="keywords" content="javascript,vue,css,html,webpack,react,nest"><meta name="author" content="CodeFish"><meta name="copyright" content="CodeFish"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="CodeFish">
+<meta property="og:url" content="http://8.152.196.221/index.html">
+<meta property="og:site_name" content="CodeFish">
+<meta property="og:locale" content="cn_ZH">
+<meta property="og:image" content="http://8.152.196.221/img/avatar.jpg">
+<meta property="article:author" content="CodeFish">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="webpack">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="nest">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://8.152.196.221/img/avatar.jpg"><link rel="shortcut icon" href="/codefish/img/favicon.ico"><link rel="canonical" href="http://8.152.196.221/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/codefish/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/codefish/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CodeFish',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-12-28 16:12:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/codefish/loading" data-lazy-src="/codefish/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/codefish/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div><div class="data-item"><a href="/codefish/tags/"><div class="headline">Tags</div><div class="length-num">34</div></a></div><div class="data-item"><a href="/codefish/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/codefish/archives/"><i class="fa-fw fas fa-archive"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/play/"><i class="fa-fw fsa fa-child"></i><span> 娱乐</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/codefish/img/cartoon.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/codefish/">CodeFish</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/codefish/archives/"><i class="fa-fw fas fa-archive"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/codefish/play/"><i class="fa-fw fsa fa-child"></i><span> 娱乐</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">CodeFish</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://gitee.com/offerkillers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/offerkillers" target="_blank" title="Gitee"><i class="fab fa-gitee"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2358514288&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="js内置对象map,set,generate,iterator"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/13.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="js内置对象map,set,generate,iterator"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="js内置对象map,set,generate,iterator">js内置对象map,set,generate,iterator</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-20T08:20:34.000Z" title="Created 2022-10-20 16:20:34">2022-10-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/js/">js</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/map/">map</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/set/">set</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/generate/">generate</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/iterator/">iterator</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">开发中用到最多的场景，父子组件通信，分发事件，组件传值。
+1.generate 迭代器可以暂停和开始
+
+*function
+yield
+yield*
+
+1.funtion* 定义一个迭代器函数
+generator.prototype.next()
+generator.prototype.return()
+generator.prototype.throw() 抛出错误
+
+12345function* generator(i) &#123;  yield i;  yield i + 10;&#125;const gen = generator(10);
+
+生成器函数有一个next（）方法
+next()方法返回一个对象，这个对象包含两个属性：value 和 done，value 属性表示本次 yield 表达式的返回值，done 属性为布尔类型，表示生成器后续是否还有 yield 语句，即生成器函数是否已经执行完毕并返回。
+调用 next()方法时，如果传入了参数，那么这个参数会传给上一条执行的 yield 语句左边的变量，例如下面例子中的x：
+1234567891011function  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/codefish/2022/08/10/react_first/" title="react"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/basketball.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="react"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/08/10/react_first/" title="react">react</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-08-10T14:08:07.000Z" title="Created 2022-08-10 22:08:07">2022-08-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/react/">react</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/react-redux/">react redux</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/08/10/react_first/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/08/10/react_first/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">hexo对于{}处理会有问题
+1.基础语法组件必须有一个根节点，组件名字必须大写
+内联样式
+123456&lt;div className=&quot;arr&quot; style=&#123;&#123; color: &quot;#F40&quot;,fontSize:20 &#125;&#125;&gt;  &#123;arr&#125;&lt;/div&gt;
+
+style如果是对象，要两个{}内嵌，写属性要加引号，fontSize小驼峰
+
+定义虚拟dom时候，不写引号
+
+标签中混入js要用{}
+
+jsx即是js和html混用，{}匹配js,&lt;&gt;匹配html
+
+内联用{}内嵌写法
+
+只有一个根标签
+
+标签需要闭合
+
+写一个不存在的标签
+12写的小写标签当作浏览器标签识别 &lt;good&gt;写的大写标签(首字母)当作component组件,如果不存在,报错com is not undefinded
+
+如果{}里面是一个数组，可以自动遍历，如果是对象，则出错
+表达式和代码
+jsx里面{}只能是一个表达式，不能是js代码
+
+arr.map
+demo(1)
+cons ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="sql语法学习"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/man-sunglasses.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="sql语法学习"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="sql语法学习">sql语法学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-30T10:14:07.000Z" title="Created 2022-06-30 18:14:07">2022-06-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/extension/">extension</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/sql/">sql</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/mysql/">mysql</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">作为一个前端，我认为sql的学习有助于理解业务，当别人告诉你这个表这个表时，不至于一知半解，我不指望一次入门学习能带来很多，但收获远比我想象的多的多。
+1,基本使用1.删除目录1.点击安装文件夹，删除profile下面的文件夹
+2.环境变量安装到sql下面的bin 文件夹
+3.mySql 服务自动启动， 启动才能使用
+2.命令启用服务12net start MySQLnet stop MySQL
+
+3.使用客户端连接数据库服务器123mysql -uroot -p密码 显示密码mysql -u root -p 隐藏密码exit 退出
+
+查看数据库
+show database
+使用数据库
+use myDatabase
+创建数据库
+create database bjdatabse
+
+数据库的基本单元
+表
+2.基础知识1.约束唯一性约束
+show tables 查看数据库下面有那些表
+2.sql语句的分类
+DQL 数据查询语句 select
+DML 数据操作语言 insert delete update 主要操作表中的数据
+DDL  数据定义语言 操作表的结构，删除列 create dro ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/" title="node基础"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/Craig%20Adderley.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="node基础"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/" title="node基础">node基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-10T12:12:10.000Z" title="Created 2022-06-10 20:12:10">2022-06-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/extension/">extension</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/node/">node</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">node主要是利用ECMAScript的核心语法封装的js库，你可以用它构建一个简单的服务器，或者读取excel,修改本地文件等
+1.fs模块fs.readFile()  用来读取指定文件中的内容
+fs.writeFile()  写入文件
+123456789101112131415161718//1.存放路径//2.编码格式//3.回调函数const fs = require(&#x27;fs&#x27;)fs.readFile(&#x27;./assets/read.txt&#x27;,&#x27;utf-8&#x27;,function(err,dataStr)&#123;    console.log(err+&#x27;-失败&#x27;)    console.log(dataStr+&#x27;成功读取的数据&#x27;)&#125;)-&gt; 结果null-失败读取文件成功读取的数据-&gt; 读取失败err的值为错误对象dataStr 为 underfinded    
+
+
+
+1.判断是否读取成功判断err是否为空
+2，向指定文件写入内容123456789101112 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/" title="typeScript入门"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/justin.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="typeScript入门"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/" title="typeScript入门">typeScript入门</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-05-20T02:34:07.000Z" title="Created 2022-05-20 10:34:07">2022-05-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/js/">js</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/ts/">ts</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/js/">js</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">—typeScript作为js的超集，主要是加了类型限制，对于面向对象的使用多于js,学习ts是后面学习node框架koa,express,nest等的基础
+[toc]
+1.类型123let a:number// a为number，以后的使用a的值只能为数字
+
+ts-可以编译为任何js版本 tsc
+1let c:boolean = false
+
+如果变量声明时，直接赋值（同时进行），它可以自动判断
+12345678910111213141516function sum(a,b) &#123;	return a+b&#125;//sum(123,456)//sum(&#x27;123&#x27;,456)//改善function sum(a:number,b:number) &#123;	return a+b&#125;sum(123,&#x27;456&#x27;) //提示错误//函数返回值的类型function sum(a:number,b:number):number &#123;	return a+b&#125;
+
+类型的都为小写 number,boolean,string
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/codefish/2022/04/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" title="微信小程序开发"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/9.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="微信小程序开发"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/04/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" title="微信小程序开发">微信小程序开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-24T14:07:07.000Z" title="Created 2022-04-24 22:07:07">2022-04-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/wx/">wx</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/wx/">wx</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/04/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/04/24/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">第一次对于微信小程序的学习，主要是一些基础语法
+微信小程序开发1）项目的基本构成1) 文件作用
+pages存放所有小程序的页面
+utils用来存放工具性质的模块（例如：格式化时间的自定义模板
+app.js 小程序项目的入口文件
+app.json 小程序项目的全局配置
+app.wxss 全局样式文件
+project.config.json项目的配置文件
+sitemap.json 配置小程序及页面是否被微信索引
+
+2）小程序页面的组成部分
+index.js 数据，时间处理函数
+index.json
+index.wxss
+index.wxml   模板结构
+
+3）.json配置文件的作用
+更目录的app.json文件 -&gt; 全局配置文件
+
+根目录中的project.config.json
+
+根目录中的sitemap.json
+
+每个页面文件夹的.json 
+
+app.json 全局配置文件
+
+
+1234567pages:[] 记录当前小程序所有页面的路径window:全局定义小程序所有页面的背景色，文字颜色等style:全局定义小程序所使用的样式版本sitemapLocation:用来 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/codefish/2022/04/22/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流浅析"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/8.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="防抖与节流浅析"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/04/22/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流浅析">防抖与节流浅析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-22T14:32:37.000Z" title="Created 2022-04-22 22:32:37">2022-04-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/js/">js</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/js/">js</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/04/22/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/04/22/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">尽管现在已有很多相关工具库，对于其的理解学习也不能中断
+防抖与节流防抖：将多次触发变为一次触发
+节流：减少一段时间的触发频率
+
+防抖：通过setTiemout 限制执行次数
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556//防抖函数包裹目标函数debounce(	submit()&#123;			&#125;)function debance(fn)&#123;    let t = null	return function()&#123;        if(t)&#123;			clearTimeout(t)        &#125;        //限制fn的执行		t = setTImeout(()=&gt;&#123;		fn()        &#125;,1000)    &#125;&#125;//只要t定时器存在，就清除掉定时器//多次点击只会执行一次//存在两个问题1.arguments传参数2.this ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/codefish/2022/04/18/webpack/" title="webpack从零到一搭建vue项目"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/9.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="webpack从零到一搭建vue项目"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/04/18/webpack/" title="webpack从零到一搭建vue项目">webpack从零到一搭建vue项目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-18T11:27:06.000Z" title="Created 2022-04-18 19:27:06">2022-04-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/webpack5/">webpack5</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/vue/">vue</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/04/18/webpack/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/04/18/webpack/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">webpack是当下应用最大的构建工具，从0到1构建项目，是一个值得学习课题。不管是vue项目还是其他项目都离不开构建工具（可能是其他构建工具）。
+webpack打包工具1.安装webpackwebpack webpack-cli -D(4x,5X)
+​	安装低版本，指定  
+
+&#x77;&#x65;&#98;&#112;&#97;&#x63;&#x6b;&#x40;&#x34;&#46;&#x34;&#x33;&#46;&#x30; &#x77;&#x65;&#x62;&#x70;&#97;&#99;&#107;&#x2d;&#x63;&#108;&#105;&#x40;&#x33;&#46;&#51;&#46;&#49;&#50; -D
+
+@3 安装3版本的最新版本
+1234567- node-modules  -&gt; bin -&gt; 软链接目录（-D）  - ```js    //锁死安装路径    npx webpack -V  //npx 找项目下的软连接目录，有的话直接启动，如果没有则安装webpack到本地，并启动他    webpack -V //全局环境
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/codefish/2022/04/10/git/" title="git 操作"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/3.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="git 操作"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/04/10/git/" title="git 操作">git 操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-10T08:02:19.000Z" title="Created 2022-04-10 16:02:19">2022-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/git/">git</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/codefish/tags/git/">git</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/codefish/tags/gitee/">gitee</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/04/10/git/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/04/10/git/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">git作为程序的代码版本控制库，初用时一些命名略显生疏，普及一下gitee仓库容量500M，github容量1G,单文件最大都是50M
+1234567891011121314151617181920212223242526271.git clone ....url//克隆代码//本地克隆远程项目2.git status //查看当前分支3.git add *    //通配符表示    //提交新增文件|修改文件   4.git commit -m &#x27;这是我的第一次提交&#x27;//提交并附带信息//5.git push //推送到云6.git branch lanhan //创建分支7.git checkout laohan//切换分支8.push之前执行更新操作//新增文件，修改代码9.git config --list //查看配置
+
+具有一个远程仓库（多人访问，多人共同维护一份代码）
+123//拉取仓库代码到本地git pull对应原生的
+
+12345本地仓库git add 暂存区//提交到暂存区git commit -m &#x27;&#x27; 工作区git p ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/codefish/2022/03/15/es62/" title="es6概述2"><img class="post_bg" src= "/codefish/loading" data-lazy-src="/codefish/img/9.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="es6概述2"></a></div><div class="recent-post-info"><a class="article-title" href="/codefish/2022/03/15/es62/" title="es6概述2">es6概述2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-03-15T12:22:09.000Z" title="Created 2022-03-15 20:22:09">2022-03-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/codefish/categories/js/">js</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/codefish/2022/03/15/es62/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/codefish/2022/03/15/es62/" itemprop="commentCount"></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">ES6是js的高级语法，不断学习js，对于代码逻辑的理解更加透彻
+es6知识点整理[toc]
+let和const
+let 声明变量
+
+不存在变量提升
+
+1//let声明的变量在声明语句之前不能使用，会报错。var未经声明的变量会挂载在window
+
+
+
+
+暂时性死区
+
+1//声明语句之前不能使用，声明语句之后不能重新定义
+
+
+
+
+不允许重复声明
+1//已经被关键词let声明的变量不能重新声明
+
+
+
+块级作用域
+12//在&#123;&#125; 中的为块级作用域，当中声明的变量只在次作用域有效。//var 除了在函数声明的变量外，其他都归全局所有
+
+
+const声明常量
+
+const声明的常量拥有let声明变量的所有特性
+const声明的变量不能进行更改
+
+
+
+变量的解构赋值
+数组的解构赋值
+
+基本使用
+
+123456789101112let [a,b,c] = [1,2,3]a = 1;b = 2; c = 3;//let [a,[b],c] = [1,[2,3],4]a = 1;b = 2;c = 4;//let [a] = [1,2,3]
+
+
+
+
+默认值
+
+123let [a,b ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/codefish/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/codefish/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/codefish/loading" data-lazy-src="/codefish/img/avatar.jpg" onerror="this.onerror=null;this.src='/codefish/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CodeFish</div><div class="author-info__description">这是codefish的个人博客,一个前端小菜鸟，欢迎指正交流，部分来源于网络，如有侵权请告知删除</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/codefish/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div><div class="card-info-data-item"><a href="/codefish/tags/"><div class="headline">Tags</div><div class="length-num">34</div></a></div><div class="card-info-data-item"><a href="/codefish/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/offerkillers"><i class="fab fa-gitee"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitee.com/offerkillers" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/offerkillers" target="_blank" title="Gitee"><i class="fab fa-gitee"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2358514288&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="js内置对象map,set,generate,iterator"><img src= "/codefish/loading" data-lazy-src="/codefish/img/13.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="js内置对象map,set,generate,iterator"/></a><div class="content"><a class="title" href="/codefish/2022/10/20/1.generate%20%E8%BF%AD%E4%BB%A3%E5%99%A8/" title="js内置对象map,set,generate,iterator">js内置对象map,set,generate,iterator</a><time datetime="2022-10-20T08:20:34.000Z" title="Created 2022-10-20 16:20:34">2022-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/codefish/2022/08/10/react_first/" title="react"><img src= "/codefish/loading" data-lazy-src="/codefish/img/basketball.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="react"/></a><div class="content"><a class="title" href="/codefish/2022/08/10/react_first/" title="react">react</a><time datetime="2022-08-10T14:08:07.000Z" title="Created 2022-08-10 22:08:07">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="sql语法学习"><img src= "/codefish/loading" data-lazy-src="/codefish/img/man-sunglasses.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="sql语法学习"/></a><div class="content"><a class="title" href="/codefish/2022/06/30/sql%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" title="sql语法学习">sql语法学习</a><time datetime="2022-06-30T10:14:07.000Z" title="Created 2022-06-30 18:14:07">2022-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/" title="node基础"><img src= "/codefish/loading" data-lazy-src="/codefish/img/Craig%20Adderley.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="node基础"/></a><div class="content"><a class="title" href="/codefish/2022/06/10/node%E5%85%A5%E9%97%A8/" title="node基础">node基础</a><time datetime="2022-06-10T12:12:10.000Z" title="Created 2022-06-10 20:12:10">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/" title="typeScript入门"><img src= "/codefish/loading" data-lazy-src="/codefish/img/justin.jpg" onerror="this.onerror=null;this.src='/codefish/img/favicon.png'" alt="typeScript入门"/></a><div class="content"><a class="title" href="/codefish/2022/05/20/Typescript%E5%AD%A6%E4%B9%A0/" title="typeScript入门">typeScript入门</a><time datetime="2022-05-20T02:34:07.000Z" title="Created 2022-05-20 10:34:07">2022-05-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/extension/"><span class="card-category-list-name">extension</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/git/"><span class="card-category-list-name">git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/js/"><span class="card-category-list-name">js</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/react/"><span class="card-category-list-name">react</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/vue/"><span class="card-category-list-name">vue</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/webpack/"><span class="card-category-list-name">webpack</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/codefish/categories/wx/"><span class="card-category-list-name">wx</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/codefish/tags/Suspence/" style="font-size: 1.1em; color: #999">Suspence</a> <a href="/codefish/tags/Teleport/" style="font-size: 1.1em; color: #999">Teleport</a> <a href="/codefish/tags/constrctor/" style="font-size: 1.1em; color: #999">constrctor</a> <a href="/codefish/tags/emit/" style="font-size: 1.1em; color: #999">emit</a> <a href="/codefish/tags/generate/" style="font-size: 1.1em; color: #999">generate</a> <a href="/codefish/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/codefish/tags/gitee/" style="font-size: 1.1em; color: #999">gitee</a> <a href="/codefish/tags/iterator/" style="font-size: 1.1em; color: #999">iterator</a> <a href="/codefish/tags/javaScript/" style="font-size: 1.1em; color: #999">javaScript</a> <a href="/codefish/tags/js/" style="font-size: 1.3em; color: #99a1ac">js</a> <a href="/codefish/tags/map/" style="font-size: 1.1em; color: #999">map</a> <a href="/codefish/tags/mysql/" style="font-size: 1.1em; color: #999">mysql</a> <a href="/codefish/tags/node/" style="font-size: 1.1em; color: #999">node</a> <a href="/codefish/tags/parents/" style="font-size: 1.1em; color: #999">parents</a> <a href="/codefish/tags/promise/" style="font-size: 1.5em; color: #99a9bf">promise</a> <a href="/codefish/tags/props/" style="font-size: 1.1em; color: #999">props</a> <a href="/codefish/tags/prototype/" style="font-size: 1.1em; color: #999">prototype</a> <a href="/codefish/tags/provide/" style="font-size: 1.1em; color: #999">provide</a> <a href="/codefish/tags/react-redux/" style="font-size: 1.1em; color: #999">react redux</a> <a href="/codefish/tags/reactive/" style="font-size: 1.1em; color: #999">reactive</a> <a href="/codefish/tags/reandonly/" style="font-size: 1.1em; color: #999">reandonly</a> <a href="/codefish/tags/ref/" style="font-size: 1.1em; color: #999">ref</a> <a href="/codefish/tags/set/" style="font-size: 1.1em; color: #999">set</a> <a href="/codefish/tags/sql/" style="font-size: 1.1em; color: #999">sql</a> <a href="/codefish/tags/ts/" style="font-size: 1.1em; color: #999">ts</a> <a href="/codefish/tags/vite/" style="font-size: 1.1em; color: #999">vite</a> <a href="/codefish/tags/vue/" style="font-size: 1.1em; color: #999">vue</a> <a href="/codefish/tags/webpack5/" style="font-size: 1.1em; color: #999">webpack5</a> <a href="/codefish/tags/wx/" style="font-size: 1.1em; color: #999">wx</a> <a href="/codefish/tags/%E5%AE%8F%E4%BB%BB%E5%8A%A1/" style="font-size: 1.1em; color: #999">宏任务</a> <a href="/codefish/tags/%E5%BE%AE%E4%BB%BB%E5%8A%A1/" style="font-size: 1.1em; color: #999">微任务</a> <a href="/codefish/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.1em; color: #999">微信小程序</a> <a href="/codefish/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">箭头函数</a> <a href="/codefish/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" style="font-size: 1.1em; color: #999">解构赋值</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/08/"><span class="card-archive-list-date">August 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/05/"><span class="card-archive-list-date">May 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/03/"><span class="card-archive-list-date">March 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2022/02/"><span class="card-archive-list-date">February 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/codefish/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">Run time :</div><div class="item-count" id="runtimeshow" data-publishDate="2024-12-28T08:12:26.690Z"></div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-12-28T08:12:26.690Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By CodeFish</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">给你一根杠杆，你也能撬动地球</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/codefish/js/utils.js"></script><script src="/codefish/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  function loadValine () {
+    function initValine () {
+      let initData = {
+        el: '#vcomment',
+        appId: 'LevoZej8tF1UF1m9XiT9Uun0-gzGzoHsz',
+        appKey: 'unVgxfqkm7OHbwzRaDJUM497',
+      }
+      
+      const valine = new Valine(initData)
+    }
+
+    if (typeof Valine === 'function') initValine() 
+    else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+  }
+
+  window.pjax ? loadValine() : window.addEventListener('load', loadValine)
+})()</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><div class="aplayer no-destroy" data-id="7911809559" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="自律,坚持,breathe" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

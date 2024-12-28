@@ -1,0 +1,14 @@
+body {
+    cursor: url(https://bu.dusays.com/2022/05/17/6283c365d20dd.png),pointer;
+  }
+  
+  .hide-block>.hide-button.open,
+  .hide-inline>.hide-button.open {
+    display: block
+  }
+  
+  a,
+  button,
+  img {
+    cursor: url(https://ts1.cn.mm.bing.net/th/id/R-C.a0601eeae9dd9f3ccf1162b98f9b67a7?rik=7tt6dxdGZG%2fBLA&riu=http%3a%2f%2fimages.shejidaren.com%2fwp-content%2fuploads%2f2014%2f08%2f044354Fb4.jpg&ehk=QvIQxB23T9lcEcZ%2bNcpj5eh2XM%2btlGgqszK%2bX3BgpBY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1),pointer
+  }

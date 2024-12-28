@@ -1,0 +1,85 @@
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: 帽子戏法
+      link: https://mzxf1025.gitee.io
+      avatar: https://mzxf1025.gitee.io/mzxf1025.gitee.io/57.png
+      descr: 一个优秀，很不错的开发
+    - name: 俊劫的学习基地 # 昵称
+      descr: 一个前端学习资源很多的小混子 # 介绍
+      avatar: http://alexwjj.github.io/img/logo.png # 头像
+      link: http://alexwjj.github.io/  # 链接
+      bgColor: '#CBEAFA' # 可选，背景颜色
+      textColor: '#6854A1' # 可选，文本颜色
+    - name: 安知鱼`Blog
+      link: https://anzhiy.cn/
+      avatar: https://img02.anzhiy.cn/adminuploads/1/2022/09/15/63232b7d91d22.jpg
+      descr: 生活明朗，万物可爱
+      siteshot: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/anzhiy.cn.jpg
+      
+- class_name: 学习
+  class_desc: 能看一下午抓螃蟹
+  link_list:
+    - name: 学檬大大
+      link: https://space.bilibili.com/11348179/?spm_id_from=333.999.0.0
+      avatar: https://ts1.cn.mm.bing.net/th/id/R-C.b83b8760323c27beb700be11fa9bbb58?rik=TyYOSoGCuCv6NQ&riu=http%3a%2f%2fpic.ntimg.cn%2ffile%2f20191121%2f11992437_225130060607_2.jpg&ehk=g1FZdmG457NsU0zXfz0Lk9ojna%2bgf61uKiCDazorBUA%3d&risl=&pid=ImgRaw&r=0
+      descr: 日系摄影师-PS后期,摄像up主
+    - name: nest
+      link: https://docs.nestjs.cn/
+      avatar: https://docs.nestjs.cn/_media/icon.svg
+      descr: 用于构建高效且可伸缩的服务端应用程序的渐进式 Node.js 框架。
+    - name: typeorm
+      link: https://typeorm.biunav.com/
+      avatar: https://typeorm.biunav.com/images/favicon.ico
+      descr: 支持多重继承模式、级联、索引、事务、迁移和自动迁移、连接池、主从复制、遵循所有可能的最佳实践
+      
+    - name: rap2
+      link: http://rap2.taobao.org/account/login
+      avatar: http://rap2.taobao.org/favicon.png
+      descr: RAP接口管理平台
+    - name: nav
+      link: http://hao.shejidaren.com/
+      avatar: http://hao.shejidaren.com/images/favicon.ico
+      descr: 设计导航
+    - name: 腾讯云开发手册
+      link: https://cloud.tencent.com/developer/doc/1158
+      avatar: https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg
+      descr: 技术手册
+    - name: 安仔弹吉他
+      link: https://mp.weixin.qq.com/s/Nv7392SysnuEUV4erYv44w
+      avatar: https://tse4-mm.cn.bing.net/th/id/OIP-C.WsK5qvetfPedFQqdOFGeBwAAAA?w=190&h=190&c=7&r=0&o=5&dpr=1.12&pid=1.7
+      descr: 一个吉他教学公众号
+      
+
+- class_name: emoji
+  class_desc: 能看一下午抓螃蟹
+  link_list:
+    - name: 思乡渔夫
+      link: https://space.bilibili.com/391943536/?spm_id_from=333.999.0.0
+      avatar: https://tse3-mm.cn.bing.net/th/id/OIP-C.uG6O9D-mVJqPPg12m7m3_wHaEK?pid=ImgDet&rs=1
+      descr: 一个抓螃蟹挖堤坝的up主
+
+
+- class_name: 网站
+  class_desc: 值得推荐的网站
+  link_list:
+    - name: 马哥导航
+      link: https://mgnav.com/
+      avatar: https://mgnav.com/favicon.ico
+      descr: 导航资源
+    - name: 在线之家
+      link: https://zxzj.vip/
+      avatar: https://zxzj.vip/statics/img/favicon.ico
+      descr: 美剧在线观看
+    - name: pexels
+      link: https://www.pexels.com/zh-cn/
+      avatar: https://www.pexels.com/favicon.ico
+      descr: 高清图片资源
+    - name: unsplash
+      link: https://unsplash.com/
+      avatar: https://unsplash.com/apple-touch-icon.png
+      descr: 高清图片资源
+    - name: 阿虚
+      link: https://axutongxue.com/
+      avatar: https://axutongxue.com/favicon.ico
+      descr: 百宝箱
