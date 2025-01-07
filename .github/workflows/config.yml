@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
           local-dir: ./codefish/
-          server-dir: /var/www/html/admin/
+          server-dir: /var/www/html/codefish/
           dangerous-clean-slate: true
 
 
