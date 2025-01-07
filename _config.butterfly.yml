@@ -37,8 +37,8 @@ copy:
 # formal:
   icon: link || the description
 social:
-  fab fa-github: https://gitee.com/offerkillers || Github
-  fab fa-gitee: https://gitee.com/offerkillers || Gitee
+  fab fa-github: https://github.com/codefishzhou || Github
+  fab fa-github: https://github.com/codefishzhou || Gitee
   fab fa-qq: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2358514288&website=www.oicqzone.com || QQ
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
 
@@ -641,9 +641,9 @@ aside:
     description: 这是codefish的个人博客,一个前端小菜鸟，欢迎指正交流，部分来源于网络，如有侵权请告知删除
     button:
       enable: true
-      icon: fab fa-gitee
+      icon: fab fa-github
       text: Follow Me
-      link: https://gitee.com/offerkillers
+      link: https://github.com/codefishzhou
   card_announcement:
     enable: true
     content: # 这是codefish的个人博客,一个前端小菜鸟，欢迎大家来指正交流，部分来源于网络，如有侵权请告知删除

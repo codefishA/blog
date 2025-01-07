@@ -109,5 +109,5 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://gitee.com/offerkillers/offerkillers.git
+  repository: https://github.com/codefishzhou/offerkillers.git
   branch: master
