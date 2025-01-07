@@ -38,7 +38,6 @@ copy:
   icon: link || the description
 social:
   fab fa-github: https://github.com/codefishzhou || Github
-  fab fa-github: https://github.com/codefishzhou || Gitee
   fab fa-qq: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2358514288&website=www.oicqzone.com || QQ
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
 
