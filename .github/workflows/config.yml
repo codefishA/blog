@@ -22,6 +22,7 @@ jobs:
           npm run clean
           npm run build
           cp -r img/* public/img/
+          mv public codefish
 
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v3
@@ -34,7 +35,7 @@ jobs:
           server: ${{ secrets.ftp_server }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
-          local-dir: ./public/
+          local-dir: ./codefish/
           server-dir: /var/www/html/admin/
           dangerous-clean-slate: true
 
