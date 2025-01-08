@@ -24,19 +24,19 @@ jobs:
           cp -r img/* public/img/
           mv public codefish
 
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     publish_dir: ./public
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          server: ${{ secrets.ftp_server }}
-          username: ${{ secrets.ftp_user }}
-          password: ${{ secrets.ftp_pwd }}
-          local-dir: ./codefish/
-          server-dir: /var/www/html/codefish/
-          dangerous-clean-slate: true
+          deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          publish_dir: ./public
+      # - name: FTP Deploy
+      #   uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      #   with:
+      #     server: ${{ secrets.ftp_server }}
+      #     username: ${{ secrets.ftp_user }}
+      #     password: ${{ secrets.ftp_pwd }}
+      #     local-dir: ./codefish/
+      #     server-dir: /var/www/html/codefish/
+      #     dangerous-clean-slate: true
 
 
