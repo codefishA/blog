@@ -18,6 +18,8 @@ jobs:
 
       - name: Install and Build
         run: |
+          rm -rf _config.yml
+          mv _config_prod.yml _config.yml
           npm install
           npm run clean
           npm run build
