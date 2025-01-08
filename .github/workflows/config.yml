@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - deploy
+      - prod
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
