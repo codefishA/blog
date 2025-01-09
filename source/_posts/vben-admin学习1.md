@@ -19,66 +19,277 @@ cover: /img/7.jpg
 
 
 ---
-
-开发中问题调试, 一直是一个业务开发痛点, 根据前端的应用载体可分为, 
-
-1. web应用
-2. 小程序
-3. h5
-   1. app内嵌h5
-   2. 微信h5 | 微信公众号
-
-### web调试
-
-1. 一般在开发过程中, 大多采用**console, debugger断点方式**
-2. 线上环境调试
-   1. 本地连接线上数据进行调试
-   2. 线上查看控制台是否有报错(一般是使用了某些没有的定义的变量或者方法)
-   3. 线上调试正在运行的源代码, 进行debugger调试
-   4. 各种浏览器tools: Vue devtools , React developer tools, react redux 
+学习项目 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin )
 
 
 
-### 小程序调试
-
-基本和上述一致,  只是载体从浏览器变为了开发者工具或者真机, 需要注意的是,  如果需要测试唤起调试, 需要编译好小程序后, 手机扫描, 设置唤起扫码的版本
+___
 
 
 
-### h5调试
+## 1.初始化
 
-1. #### 内嵌h5
+```js
+//(package.json/.node-version有写)
+nvm use 20 
 
-   如果有对应程序的debug包, 可以直接抓包, 如果不能抓包, 网页检查器也是不能使用的
+pnpm i 
 
-   - 接口调试 / 网页错误
+pnpm run dev
+```
 
-     - 抓包工具charles fiddler
+疑问点: 选择ui框架是怎么实现的 ?
 
-     - 网页调试功能 
+## 2. 选择了ant-design
 
-       - safari可以使用网页检查器(和web应用一样全可以调试)
+###### 
 
-       - chorme devices可以调试任何网页, 前提是app没有限制 
+### 1.main.ts
 
-         Eg: [chorme devices](chrome://inspect/#devices) : chrome://inspect/#devices
+```typescript
+import { initPreferences } from '@vben/preferences';
+import { unmountGlobalLoading } from '@vben/utils';
 
-2. #### 微信h5, 微信公众号
+import { overridesPreferences } from './preferences';
 
-   1. 主要使用微信开发者工具
+/**
+ * 应用初始化完成之后再进行页面加载渲染
+ */
+async function initApplication() {
+  // name用于指定项目唯一标识
+  // 用于区分不同项目的偏好设置以及存储数据的key前缀以及其他一些需要隔离的数据
+  const env = import.meta.env.PROD ? 'prod' : 'dev';
+  const appVersion = import.meta.env.VITE_APP_VERSION;
+  const namespace = `${import.meta.env.VITE_APP_NAMESPACE}-${appVersion}-${env}`;
 
-3. 
+  // app偏好设置初始化
+  await initPreferences({
+    namespace,
+    overrides: overridesPreferences,
+  });
+
+  // 启动应用并挂载
+  // vue应用主要逻辑及视图
+  const { bootstrap } = await import('./bootstrap');
+  await bootstrap(namespace);
+
+  // 移除并销毁loading
+  unmountGlobalLoading();
+}
+
+initApplication();
+
+```
+
+#### 简单解读
+
+1. 根据不同环境, 项目nameSpace, 项目版本, 三个参数拼接了项目唯一编码
+2. 等待外观初始化,  传人第一步拼接的标识, 和覆盖的外观参数(覆盖默认外观参数)
+3. 导入bootstrap, 并等待初始化
+4. 销毁loading
+
+
+
+#### 疑问点
+
+1. loading在哪初始化
+2. bootstrap做了哪些工作
+
+
+
+#### 继续探究
+
+##### 1. 外观加载
+
+- initPreferences
+- overridesPreferences
+
+
+
+###### 1.initPreferences 
+
+声明
+
+```typescript
+(alias) const initPreferences: ({ namespace, overrides }: 
+```
+
+文件路径
+
+<u>packages/@core/preferences/src/index.ts</u>
+
+```typescript
+// 初始化偏好设置
+const initPreferences =
+  preferencesManager.initPreferences.bind(preferencesManager);
+```
+
+即这里调用了preferencesManager.initPreferences
+
+
+
+**回头来看初始化外观配置**
+
+```js
+public async initPreferences({ namespace, overrides }: InitialOptions) {
+    // 是否初始化过
+    if (this.isInitialized) {
+      return;
+    }
+    // 初始化存储管理器
+    this.cache = new StorageManager({ prefix: namespace });
+    // 合并初始偏好设置
+    this.initialPreferences = merge({}, overrides, defaultPreferences);
+
+    // 加载并合并当前存储的偏好设置
+    const mergedPreference = merge(
+      {},
+      // overrides,
+      this.loadCachedPreferences() || {},
+      this.initialPreferences,
+    );
+
+    // 更新偏好设置
+    this.updatePreferences(mergedPreference);
+
+    this.setupWatcher();
+
+    this.initPlatform();
+    // 标记为已初始化
+    this.isInitialized = true;
+  }
+```
+
+**解读**
+
+注释已经很清楚,  唯一疑惑的地方是initialPreferences存储之后 , 先获取了一遍存储器的配置, 再将初始化配置覆盖其他配置
+
+
+
+- 此处的merge函数问了下老g: 解读如下
+
+- this.initialPreferences = merge({}, overrides, defaultPreferences); 时，合并的结果将遵循以下逻辑：
+
+  合并顺序：
+
+  从一个空对象 {} 开始。
+
+  依次合并 overrides 和 defaultPreferences。
+
+  2. 数组覆盖逻辑：
+
+  如果 overrides 和 defaultPreferences 中的某个键对应的值都是数组，那么 overrides 中的数组将直接覆盖 defaultPreferences 中的数组。
+
+  结果：
+
+  this.initialPreferences 将是一个合并后的对象。
+
+  对于非数组的键，overrides 中的值将覆盖 defaultPreferences 中的值。
+
+  对于数组的键，overrides 中的数组将直接替换 defaultPreferences 中的数组。
+
+  因此，this.initialPreferences 的结果是一个合并后的对象，优先使用 overrides 中的值，特别是数组类型的值会直接覆盖。
 
 
 
 
 
-###### 关于工具的使用不赘述, 可以自行搜索
 
-注意
 
-- charles证书有效期为一年, 网页检查器部分机型不装证书可能没有效果
-- 线上源代码调试的时候, 搜索关键字建议用中文, 函数名都会被转为别的名字, 会搜索不到
+###### 2.preferencesManager类
+
+接下来找到preferencesManager这个类, 部分声明如下
+
+```js
+class PreferenceManager {
+  private cache: null | StorageManager = null;
+  // private flattenedState: Flatten<Preferences>;
+  private initialPreferences: Preferences = defaultPreferences;
+  private isInitialized: boolean = false;
+  private savePreferences: (preference: Preferences) => void;
+  private state: Preferences = reactive<Preferences>({
+    ...this.loadPreferences(),
+  });
+  constructor() {
+    this.cache = new StorageManager();
+
+    // 避免频繁的操作缓存
+    this.savePreferences = useDebounceFn(
+      (preference: Preferences) => this._savePreferences(preference),
+      150,
+    );
+  }
+
+  clearCache() {
+    [STORAGE_KEY, STORAGE_KEY_LOCALE, STORAGE_KEY_THEME].forEach((key) => {
+      this.cache?.removeItem(key);
+    });
+  }
+  ...
+}
+```
+
+
+
+
+
+不难猜出上述几个属性的意义
+
+- private cache: null | StorageManager = null;   **自身缓存**
+- private initialPreferences: Preferences = defaultPreferences; **默认外观配置**
+- private isInitialized: boolean = false;  **是否已经初始化**
+- private savePreferences: (preference: Preferences) => void; **报错外观方法**
+- private state: Preferences = reactive<Preferences>({ 
+      ...this.loadPreferences(),
+    });  **外观配置, 并且初始化配置**
+
+
+
+- loadPreferences
+
+```typescript
+private loadPreferences(): Preferences {
+    return this.loadCachedPreferences() || { ...defaultPreferences };
+}
+```
+
+优先获取缓存的配置, 如果缓存配置没有则初始化默认配置
+
+
+
+- constructor
+
+  - 初始化了一个缓存类
+
+  - 给savePreferences增加防抖
+
+- clearCache 
+
+  一个非公有或者私有方法, 用于清除缓存
+
+
+
+##### 2.bootstrap初始化
+
+挂载vue在节点上, 注册需要用的实例对象
+
+###### 1.initComponentAdapter
+
+```js
+const components: Partial<Record<ComponentType, Component>> ={}
+```
+
+
+
+##### 2.
+
+
+
+
+
+
+
+
 
 
 
