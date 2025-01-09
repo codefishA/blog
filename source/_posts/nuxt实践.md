@@ -12,9 +12,9 @@ date: 2024-08-11 21:55:34
 
 categories: nuxt
 
-top_img: /img/13.jpg
+top_img: /img/.jpg
 
-cover: /img/13.jpg
+cover: /img/12.jpg
 
 
 
