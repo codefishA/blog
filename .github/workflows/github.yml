@@ -18,17 +18,23 @@ jobs:
 
       - name: Install and Build
         run: |
+          mv _config_github.yml _config.yml
           npm install
           npm run clean
           npm run build
           cp -r img/* public/img/
-          mv public codefish
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
           publish_dir: ./public
+
+      # - name: Install and Build
+      #   run: |
+      #     mv _config_deploy.yml _config.yml
+      #     mv public codefish
+
       # - name: FTP Deploy
       #   uses: SamKirkland/FTP-Deploy-Action@4.0.0
       #   with:

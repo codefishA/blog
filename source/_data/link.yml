@@ -1,6 +1,14 @@
 - class_name: 友情链接
   class_desc: 那些人，那些事
   link_list:
+    - name: 被删的前端游乐场
+      link: https://godbasin.github.io/front-end-playground/
+      avatar: https://avatars.githubusercontent.com/u/11885123?s=48&v=4
+      descr: 性能优化原理讲的很好
+    - name: web前端面试 - 面试官系列
+      link: https://vue3js.cn/interview/
+      avatar: https://avatars.githubusercontent.com/u/9276376?s=48&v=4
+      descr: 本仓库为语音打卡社群(JS每日一题)维护的前端面试题库
     - name: 帽子戏法
       link: https://mzxf1025.gitee.io
       avatar: https://mzxf1025.gitee.io/mzxf1025.gitee.io/57.png
