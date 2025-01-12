@@ -23,7 +23,6 @@ cover: /img/9.jpg
 学习项目 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin )
 
 
-
 ___
 
 
@@ -276,13 +275,127 @@ private loadPreferences(): Preferences {
 
 ###### 1.initComponentAdapter
 
+注册全局组件
+
+- 声明要注册的组件list
+
 ```js
 const components: Partial<Record<ComponentType, Component>> ={}
 ```
 
+- *将组件注册到全局共享状态中*
+
+  globalShareState**.**setComponents(components)**;**
+
+  ```js
+  globalShareState.defineMessage({
+      // 复制成功消息提示
+      copyPreferencesSuccess: (title, content) => {
+        notification.success({
+          description: content,
+          message: title,
+          placement: 'bottomRight',
+        });
+      },
+    });
+  ```
+
+  
+
+- 1
 
 
-##### 2.
+
+
+
+##### 3.createApp - setupI18n
+
+加载多语言
+
+```typescript
+async function setupI18n(app: App, options: LocaleSetupOptions = {}) {
+  await coreSetup(app, {
+    defaultLocale: preferences.app.locale,
+    loadMessages,
+    missingWarn: !import.meta.env.PROD,
+    ...options,
+  });
+}
+```
+
+从preferences里面读取语言en/cn,  loadMessage加载语言, missingWarn线上版本不警告, 注意逻辑就是**loadMessages**
+
+
+
+###### 1. loadMessages
+
+- 加载系统反应文件
+- 加载第三方文件
+
+```typescript
+async function loadMessages(lang: SupportedLanguagesType) {
+  const [appLocaleMessages] = await Promise.all([
+    localesMap[lang]?.(),
+    loadThirdPartyMessage(lang),
+  ]);
+  return appLocaleMessages?.default;
+}
+```
+
+
+
+加载系统文件,  加载`/\.\/langs\/([**^**/]**+**)\/(.*****)\.json**$**/`下的所有语言文件, 此处使用了一个方法**loadLocalesMapFromDir**
+
+加载第三方文件, 使用loadThirdPartyMessage,  里面分别加载antD和day.js的locales文件
+
+
+
+##### 4. initStores 初始化pinia
+
+
+
+##### 5. 其他
+
+###### 1.安装权限指令
+
+###### 2.配置路由及路由守卫
+
+###### 3.配置@tanstack/vue-query
+
+`@tanstack/vue-query` 非常适合以下场景：
+
+- 需要频繁与后端 API 交互的应用。
+- 需要缓存数据以减少重复请求的应用。
+- 需要实时更新数据的应用（如仪表盘、实时通知等）。
+- 需要处理复杂数据加载逻辑的应用（如分页、无限加载等）。
+
+###### 4.动态更新标题
+
+```js
+// 配置 pinia-tore
+  await initStores(app, { namespace });
+
+  // 安装权限指令
+  registerAccessDirective(app);
+
+  // 配置路由及路由守卫
+  app.use(router);
+
+  // 配置@tanstack/vue-query
+  app.use(VueQueryPlugin);
+
+  // 动态更新标题
+  watchEffect(() => {
+    if (preferences.app.dynamicTitle) {
+      const routeTitle = router.currentRoute.value.meta?.title;
+      const pageTitle =
+        (routeTitle ? `${$t(routeTitle)} - ` : '') + preferences.app.name;
+      useTitle(pageTitle);
+    }
+  });
+```
+
+
 
 
 
